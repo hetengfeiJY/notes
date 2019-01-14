@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加hot显示</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+    <script type="text/javascript">
+       //添加hot显示
+        $(document).ready(function(){
+            //追加em标签
+            $(".jnCatainfo .promoted").append("<em class='hot'></em>");
+        })
+    </script>
+    <style>
+       /* 商品分类 */
+        #jnCatalog{
+            padding-left: 100px;
+            float: left;
+            height: 800px;
+            margin: 0 11px 0 0;
+            overflow: hidden;
+            width: 187px;
+            margin: 0px;
+        }
+        #jnCatalog h2{
+            margin: 0px;
+            height:30px;
+            line-height:30px;
+            color:#fff;
+            font-size:12px;
+            text-indent:13px;
+            background-color:#6E6E6E;
+        }
+        .jnCatainfo{
+            border: 1px solid #6E6E6E;
+            border-style: none solid solid;
+            border-width: 0 1px 1px;
+            height: 700px;
+            overflow: hidden;
+            padding: 5px 10px 0;
+            width: 165px;
+            font-size:12px;
+        }
+        .jnCatainfo h3 {
+            border-bottom: 1px solid #EEEEEE;
+            float: left;
+            line-height:24px;
+            width: 164px;
+        }
+        .jnCatainfo ul {
+            float: left;
+            padding: 0px 2px 8px 0px;
+            margin: 0px;
+        }
+        .jnCatainfo li {
+            color: #AEADAE;
+            float: left;
+            height: 24px;
+            line-height: 24px;
+            width: 79px;
+            overflow: hidden;
+            position:relative;
+        }
+        .jnCatainfo li a{
+            color: #444444;
+        }
+        .jnCatainfo li a:hover{
+            color: #008CD7;
+            text-decoration: none;
+        }
+        .jnCatainfo li a.promoted{
+            color:#F9044E;
+        }
+        .jnCatainfo li .hot {
+            /* 图片路径、正常大小、随屏幕滚动、定位0 0、透明颜色 */
+            background: url("images/hot.gif") no-repeat scroll 0 0 transparent;
+            height: 16px;
+            position: absolute;
+            top: 0;
+            width: 21px;
+        }
+    </style>
+</head>
+<body>
+   <!-- 商品分类 start -->
+    <div id="jnCatalog">
+        <h2 title="商品分类">商品分类</h2>
+        <div class="jnCatainfo">
+            <h3>推荐品牌</h3>
+            <ul>
+                <li><a href="#nogo" >耐克</a></li>
+                <li><a href="#nogo" class="promoted">阿迪达斯</a></li>
+                <li><a href="#nogo" >达芙妮</a></li>
+                <li><a href="#nogo" >李宁</a></li>
+                <li><a href="#nogo" >安踏</a></li>
+                <li><a href="#nogo" >奥康</a></li>
+                <li><a href="#nogo" class="promoted">骆驼</a></li>
+                <li><a href="#nogo" >特步</a></li>
+            </ul>
+            <br class="clear" />
+            <h3>女装</h3>
+            <ul>
+                <li><a href="#nogo" >呢大衣</a></li>
+                <li><a href="#nogo" >T恤</a></li>
+                <li><a href="#nogo" >羽绒</a></li>
+                <li><a href="#nogo" >衬衫</a></li>
+                <li><a href="#nogo" >羊绒衫</a></li>
+                <li><a href="#nogo" >针织</a></li>
+                <li><a href="#nogo" >连衣裙</a></li>
+                <li><a href="#nogo" >皮外套</a></li>
+            </ul>
+            <br class="clear" />
+            <h3>男装</h3>
+            <ul>
+                <li><a href="#nogo" >衬衫</a></li>
+                <li><a href="#nogo" >T恤衫</a></li>
+                <li><a href="#nogo" >夹克</a></li>
+                <li><a href="#nogo" >大皮衣</a></li>
+                <li><a href="#nogo" >风衣</a></li>
+                <li><a href="#nogo" >牛仔裤</a></li>
+                <li><a href="#nogo" >西服</a></li>
+                <li><a href="#nogo" >卫衣</a></li>
+            </ul>
+            <br class="clear" />
+            <h3>鞋包配饰</h3>
+            <ul>
+                <li><a href="#nogo" >围巾</a></li>
+                <li><a href="#nogo" >旅行箱</a></li>
+                <li><a href="#nogo" >真皮包</a></li>
+                <li><a href="#nogo" >韩版</a></li>
+                <li><a href="#nogo" >达芙妮</a></li>
+                <li><a href="#nogo" >单肩包</a></li>
+                <li><a href="#nogo" >毛线</a></li>
+                <li><a href="#nogo" >清仓靴子</a></li>
+            </ul>
+            <br class="clear" />
+        </div>
+    </div>
+    <!-- 商品分类 end -->
+</body>
+</html>

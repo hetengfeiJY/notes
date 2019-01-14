@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Json</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+    <script type="text/javascript">
+    //  //获取年龄
+    //  var student={"name":"李四","age":"18"};
+    //  alert(student.age);//输出结果18
+
+     //获取小三的年龄
+     var JSON = {
+         "students":[
+         {"name":"李四","age":"18"},
+         {"name":"小三","age":"28"}
+         ],
+         "xiaoyi":{"name":"1","age":{"age1":"1234","age2":"4321"}}
+     }
+     alert(JSON.students[1].age);//输出结果28
+     alert(JSON.xiaoyi.age.age1);//输出结果1234
+
+    </script>
+</head>
+<body>
+</body>
+</html>

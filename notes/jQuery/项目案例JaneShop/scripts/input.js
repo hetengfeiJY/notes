@@ -1,0 +1,22 @@
+//搜索文本框效果
+$(document).ready(function(){
+    $("#inputSearch").focus(function () { 
+        $(this).addClass("focus");
+        if($(this).val()==this.defaultValue)
+        {
+            $(this).val("");
+        }
+        
+    }).blur(function(){ 
+        $(this).removeClass("focus");  
+        if($(this).val()=="")
+        {
+            $(this).val(this.defaultValue);
+        }
+    }).keyup(function(e) { 
+        if(e.which==13||e.keyCode==13)
+		{
+			alert("执行键盘提交事件");
+		}
+    });
+})

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM元素操作</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+    <script type="text/javascript">
+     $(document).ready(function(){
+        //样式操作
+        $("h2").css("padding-top","50px");//设置css样式
+        $("h2").css({"padding-top":"50px","color":"red","background-color":"aqua"});//批量设置css样式
+        $("h2").addClass("style1");//添加Class样式
+        $("h2").addClass("style1 style2");//添加多个Class样式
+        $("h2").removeClass("style1");//移除Class样式
+        $("h2").removeClass("style1 style2");//移除多个Class样式
+        //内容操作
+        var html= $("div").html();//获取div下面所有的html标签代码
+        var html= $("div").text();//获取div下面所有的文本内容
+        $("div").html("<h5>广东佛山广东佛山</h5>");//把div下标签代码改成h5内容
+        $("div h5").text("尽快了解公司法定");//更改div h5下的文本内容
+        $("input[type=text]").val();//获取input的value值
+        $("input[type=text]").val("请输入一个内容").css("color","blue");//给input的value赋值并改变颜色
+        //节点操作
+        var $newNode1=$("<li>一出好戏</li>");//创建节点
+        var $newNode2=$("<li>一出好戏2</li>");//创建节点
+        //追加子节点
+        $("ul").append($newNode1);向ul追加节点
+        $newNode2.appendTo("ul");把节点追加到ul
+        //前置追加子节点
+        $("ul").prepend($newNode1);向ul前置插入节点
+        $newNode2.prependTo("ul");把节点前置插入到ul
+        //元素之后插入同辈节点
+        $("ul").after($newNode1);//同辈元素之后插入节点
+        $($newNode1).insertAfter("ul");//把节点插入到同辈元素之后
+        //元素之前插入同辈节点
+        $("ul").before($newNode1);//同辈元素之前插入节点
+        $($newNode1).insertBefore("ul");//把节点插入到同辈元素之前
+        //替换节点
+        $("ul li:eq(1)").replaceWith($newNode1);//替换ul下第2个li节点
+        $($newNode1).replaceAll("ul li:eq(1)");//把节点替换到ul下第2个li
+        //复制节点
+        $("ul li:eq(1)").clone(true).appendTo("ul");//复制ul下第2个li节点并追加ul中
+        //输出元素本身html
+        alert($("<div></div>").append($("ul li:eq(1)").clone()).html());
+        //删除节点
+        $("li[name]").remove();//删除整个个节点
+        $("li[name]").detach();//删除整个个节点，保留元素绑定事件、附加元素        
+        $("li[name]").empty();//清空节点内容
+        //属性操作
+        $("li[name]").attr("name");//获取li元素name属性值
+        $("li[name]").attr("name","是是是");//更改属性值
+        $("li[name]").attr({"name":"是是是","id":"对对对"});//批量更改属性值
+        alert($("li[name]").attr("name"));//输出li元素name属性值
+        $("li[name]").removeAttr("name");//删除li元素name属性
+        //遍历子元素
+        $("body").children//显示所有body节点信息
+        console.log($("body").children)
+        //遍历同辈元素
+        $("ul li:eq(1)").next().css("color","red");//获取紧邻匹配元素之后的同辈元素
+        $("ul li:eq(1)").prev().css("color","red");//获取紧邻匹配元素之前的同辈元素
+        $("ul li:eq(1)").siblings().css("color","red");//获取匹配元素前面后面的同辈元素
+        //遍历前辈元素
+        $("ul li:eq(1)").parent().css("color","red");//获取元素的父级元素
+        $("ul li:eq(1)").parents().css("color","red");//获取元素的祖先元素
+        //each循环遍历
+        $("ul li").each(function (i) {//参数i从0开始累加
+            alert($(this).text());
+          })
+        //find()查找元素方法
+        $("ul li").find("span").css({"display":"block","border":"solid 4px"}).width(100).height(100);
+        //offset()获取横纵坐标
+        console.log($("ul li").find("span").offset());//获取输出span的横纵坐标
+        console.log($("ul li").find("span").offset().left);//获取输出span的纵坐标
+        console.log($("ul li").find("span").offset().top);//获取输出span的横坐标
+        //鼠标事件
+        $("ul li").click(function(){$(this).css("color","blue")});//单击鼠标事件
+        $("ul li").mouseover(function(){$(this).css("color","red")});//鼠标移过事件
+        $("ul li").mouseout(function(){$(this).css("color","#999")});//鼠标移出事件
+        //焦点事件
+        $("input[type=text]").focus(function(){$(this).css("color","red")});//获取焦点事件
+        $("input[type=text]").blur(function(){$(this).css("color","blue")});//失去焦点事件
+        //键盘事件
+        $("input[type=text]").keypress(function(e){
+            if(e.keyCode==13)//敲击回车时判断通过
+            {
+                $(this).css("color","yellow");
+            }
+        })
+        //事件
+        //bind()绑定事件
+        $("ul li").bind("mouseover",function(){
+            $(this).css("color","blue")
+        });
+        $("ul li").bind({
+            "mouseover":function(){
+                $(this).css("color","blue")
+            },
+            "mouseout":function(){
+                $(this).css("color","red")
+            }
+        });
+        unbind()//解除绑定事件
+        $("ul li").unbind("mouseover");
+        $("ul li").unbind("mouseover mouseout");
+        on()//绑定事件，推荐使用
+        $("ul").on("click mouseover mouseout","li",{},function(){
+             $(this).css("color","blue")
+        });
+        //off()解除绑定事件
+        $("ul").off("mouseover mouseout","li");
+        hover()//事件，相当于mouseover与mouseout组合
+        $("ul li").hover(function(){$(this).css("color","red")},function(){$(this).css("color","blue")})
+        toggle()//方法用于模拟熟料连续click事件
+        $("ul li").toggle(
+            function(){$(this).css("color","red")},
+            function(){$(this).css("color","yellow")},
+            function(){$(this).css("color","blue")},
+            function(){$(this).css("color","rgb(0, 255, 85)")},
+            function(){$(this).css("color","rgb(0, 132, 255)")},
+            function(){$(this).css("color","#333")}
+        )
+        //显示隐藏
+         $(":button").mouseover(function(){
+             $("li").hide();
+         });//鼠标移入节点并隐藏
+         $(":button").mouseout(function(){
+             $("li").show();
+         });//鼠标移入节点并显示
+        //淡入淡出
+        $(":button").mouseover(function(){
+             $("li").fadeOut();
+         });//鼠标移入节点并淡出
+         $(":button").mouseout(function(){
+             $("li").fadeIn();
+         });//鼠标移入节点并淡入
+         //抽屉效果展示和隐藏
+         $(":button").mouseover(function(){
+             $("li").slideUp();
+         });//鼠标移入节点抽屉隐藏
+         $(":button").mouseout(function(){
+             $("li").slideDown();
+         });//鼠标移入节点抽屉展示
+         //animate自定义动画函数
+         //$("selector").animate(params,speed,easing,fn);
+         //params:规定产生动画效果的CSS样式和值
+         //speed：三种预选速度之一的字符串("slow"、"normal"、"fast")或毫秒数值(如：1000)
+         //easing:要使用擦除效果的名称(需要使用插件)，默认提供"linear"，"swing"
+         //fn：在动画完成时执行一次函数，每个元素执行一次
+         $(":button").click(function(){
+             $("#bb").animate(
+                 {"height":"300","width":"300","marginleft":"100px"},
+                 "slow","swing",alert("动画")
+             );
+         });
+
+
+     })
+    </script>
+    <style type="text/css">
+        h2{margin: 0px;padding: 0px;font-size: 15px}
+        .style1{border: 2px dashed rgb(153, 153, 153);}
+        .style2{color:blue;}
+    </style>
+</head>
+<body>
+   <h2>addClass添加样式元素</h2>
+   <div id="bb">
+       <h1 style="border:3px dashed;padding:20px;">输出HTML代码</h1>
+       <h3 style="border:3px;padding:20px;">阿斯顿发送到发多少</h1>
+    </div>
+    <input type="text" name="txt" id="1" \>
+    <input type="button" value="点击">
+    <h2>动画排名</h2>
+    <div>
+        <ul>
+            <li>葫芦娃大战奥特曼</li>
+            <li name="aa" id="bb">第三种爱情</li>
+            <li><span>span阿打算开发接口连接</span></li>
+            <li>铠甲勇士</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

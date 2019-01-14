@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>超链接文字提示效果</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+       //超链接文字提示效果，文字随鼠标移动（坐标知识考察）
+        $(function(){
+            var x=5;
+            var y=10;
+            $("#jnNoticeInfo a.tooltip").hover(function (e) {
+                    // over 鼠标移入事件
+                    this.myTitle=this.title;//默认鼠标放上去显示title
+                    this.title="";//鼠标放上去系统自带title消失
+                    var tooltip="<div id='tooltip'>"+this.myTitle+"</div>";
+                    $("body").append(tooltip);//创建好vid添加到body中
+                    $("#tooltip").css({//定位坐标
+                        "top":(e.pageY+y)+"px",//e.pageY纵坐标位置
+                        "left":(e.pageX+x)+"px",//e.pageX横坐标位置
+                    }).fadeIn(1000);//淡出效果显示
+                }, function () {
+                    // out 鼠标移出事件
+                    this.title=this.myTitle;
+                    $("#tooltip").remove();//移出
+                }
+            ).mousemove(function(e){
+                //move 鼠标移动事件
+                $("#tooltip").css({//随鼠标移动改变定位坐标，即显示文字随鼠标移动
+                    "top":(e.pageY+y)+"px",
+                    "left":(e.pageX+x)+"px"
+                });
+            });
+
+        })
+    </script>
+    <style>
+        /* 最新动态 */
+        *{
+            margin: 0;
+        }
+        #jnNoticeInfo {
+            margin: 100px 300px;
+            float: left;
+            border: 1px solid #DFDFDF;
+            height: 133px;
+            overflow: hidden;
+            width: 228px;
+            font-size: 12px;
+        }
+        #jnNoticeInfo h2 {
+            height: 23px;
+            line-height: 23px;
+            border-bottom: 1px solid #DFDFDF;
+            text-indent:12px;
+        }
+        #jnNoticeInfo ul {
+            float: left;
+            padding: 6px 2px 0 12px;
+        }
+        #jnNoticeInfo li {
+            height: 20px;
+            line-height: 20px;
+            overflow: hidden;
+        }
+        #jnNoticeInfo li a{
+            color:#666666;
+        }
+        #jnNoticeInfo li a:hover{
+            color: #008CD7;
+            text-decoration: none;
+        }
+        /* tooltip */
+        #tooltip{
+            position: absolute;
+            border: 1px solid #333;
+            background: #f7f5d1;
+            padding: 1px;
+            color: #333;
+            font-size: 12px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 最新动态 start -->
+    <div id="jnNotice">
+        <div id="jnNoticeInfo">
+            <h2 title="最新动态">最新动态</h2>
+            <ul>
+                <li><a href="###1" class="tooltip" title="[活动] 伊伴春鞋迎春大促">[活动] 伊伴春鞋迎春大促</a></li>
+                <li><a href="###2" class="tooltip" title="[活动] 千百度冬靴新品火热让利">[活动] 千百度冬靴新品火热让利</a></li>
+                <li><a href="###3" class="tooltip" title="[活动] COEY秋冬新品全场2.3折起">[活动] COEY秋冬新品全场2.3折起</a></li>
+                <li><a href="###4" class="tooltip" title="[活动] 伊伴春鞋迎春大促">[活动] 伊伴春鞋迎春大促</a></li>
+                <li><a href="###5" class="tooltip" title="[活动] 千百度冬靴新品火热让利">[活动] 千百度冬靴新品火热让利</a></li>
+                <li><a href="###6" class="tooltip" title="[活动] COEY秋冬新品全场2.3折起">[活动] COEY秋冬新品全场2.3折起</a></li>
+            </ul>
+            <br class="clear" />
+        </div>
+    </div>
+    <!-- 最新动态 end -->
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页打拼广告效果</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        //首页大屏广告效果
+        $(function(){
+            var $imgrolls=$("#jnImageroll div a");
+            var len=$imgrolls.length;
+            var index=0;
+            var adTimer=null;
+            $imgrolls.mouseover(function() { 
+                index=$imgrolls.index(this);
+                showimg(index);
+            }).eq(0).mouseover();
+
+            //滑入导航停止动画，滑出开始动画
+            $("#jnImageroll").hover(function(){
+                if(adTimer){
+                    //定时器函数clearInterval停止无限循环
+                    clearInterval(adTimer);
+                }
+            },function(){
+                //定时器函数setInterval无限循环
+                adTimer=setInterval(function(){
+                    showimg(index);
+                    index++;
+                    if(index==len){
+                        index=0;
+                    }
+                },2000);
+            }).trigger("mouseleave");
+        })
+        //显示不同幻灯片
+        function showimg(index) {
+            var $rollobj=$("#jnImageroll");
+            var $rollist=$rollobj.find("div a");
+            var newhref=$rollist.eq(index).attr("href");//获取当前滑过的href值
+            // alert(newhref);
+            $("#JS_imgWrap").attr("href",newhref)//将值设置给大图外面的链接
+            .find("img").eq(index).stop(true,true).fadeIn().siblings().fadeOut();
+            //获取所有大图值，然后根据传入的参数index来显示相应的图片，把相邻图片隐藏起来
+            $rollist.removeClass("chos").css("opacity","0.7").eq(index).addClass("chos")
+            .css("opacity","1");
+            //清除导航chos样式，并设置透明度设为0.7、添加选中导航chos样式，并设置透明度为1
+        }
+    </script>
+    <style>
+        /* 大屏广告 */
+        body {margin:0;padding:0;}
+        #jnImageroll {
+            float: left;
+            height: 320px;
+            margin: 100px 300px;
+            overflow: hidden;
+            position: relative;
+            width: 550px;
+        }
+        #jnImageroll img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #jnImageroll div {
+            bottom: 0;
+            overflow: hidden;
+            position: absolute;
+            float: left;
+        }
+        #jnImageroll div a {
+            background-color: #444444;
+            color: #FFFFFF;
+            display: inline-block;
+            float: left;
+            height: 32px;
+            margin-right: 1px;
+            overflow: hidden;
+            padding: 5px 15px;
+            text-align: center;
+            width: 79px;
+            text-decoration: none;
+            font: 12px Tahoma normal;
+        }
+        #jnImageroll div a:hover {
+            text-decoration: none;
+        }
+        #jnImageroll div a em {
+            cursor: pointer;
+            display: block;
+            height: 16px;
+            overflow: hidden;
+            width: 79px;
+        }
+        #jnImageroll .last {
+            margin: 0;
+            width: 80px;
+        }
+        #jnImageroll a.chos {
+            background: url("../images/adindex.gif") no-repeat center 39px #37A7D7;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- 大屏广告 start -->
+		<div id="jnImageroll">
+                <a href="#nogo" id="JS_imgWrap">
+                    <img src="images/ads/1.jpg" alt="相约情人节"/>
+                    <img src="images/ads/2.jpg" alt="新款上线"/>
+                    <img src="images/ads/3.jpg" alt="愤怒小鸟特卖"/>
+                    <img src="images/ads/4.jpg" alt="男鞋促销第一波"/>
+                    <img src="images/ads/5.jpg" alt="春季新品发布"/>
+                </a>
+                <div>
+                    <a href="###1"><em>相约情人节</em><em>全场119元起</em></a>
+                    <a href="###2"><em>新款上线</em><em>全场357元起</em></a>
+                    <a href="###3"><em>愤怒小鸟特卖</em><em>全场89元</em></a>
+                    <a href="###4"><em>男鞋促销第一波</em><em>全场3.1折起</em></a>
+                    <a href="###5" class="last"><em>春季新品发布</em><em>全场4.1折起</em></a>
+                </div>
+            </div>
+            <!-- 大屏广告 end -->
+</body>
+</html>

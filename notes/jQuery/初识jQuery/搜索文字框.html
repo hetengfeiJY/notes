@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索文字框效果</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+    <script type="text/javascript">
+       //搜索文字框效果
+        $(document).ready(function(){
+            $("#inputSearch").focus(function () { 
+                $(this).addClass("focus");
+                if($(this).val()==this.defaultValue)
+                {
+                    $(this).val("");
+                }
+            }).blur(function(){ 
+                $(this).removeClass("focus");  
+                if($(this).val()=="")
+                {
+                    $(this).val(this.defaultValue);
+                }
+            }).keyup(function(e) { 
+                if(e.which==13||e.keyCode==13)//考虑兼容性问题
+                {
+                    alert("执行键盘提交事件");
+                }
+            });
+        })
+    </script>
+    <style>
+        #inputSearch {
+            border: 1px solid #BABEBF;
+            color: #999999;
+            font-size: 14px;
+            height: 17px;
+            margin: 100px 100px;
+            padding: 3px 6px 5px 6px;
+            width: 200px;
+        }
+        #inputSearch.focus{ border: 1px solid rgb(45, 157, 218);color: black}
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="inputSearch" class="" value="请输入商品名称" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>表单选择器</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+<script type="text/javascript">
+     $(document).ready(function(){
+        //基本选择器
+        $("h2").css("background-color","red");//标签选择器，选取h2标签并将其添加背景颜色
+        $(".title").css("background-color","green");//类选择器，选取并设置所有class为title元素的背景颜色
+        $("#box").css("background-color","green");//id选择器，选取并设置所有id为box元素的背景颜色
+        $("h2,.title,#box").css("background-color","green");//并集选择器，等于css当中的群组选择器
+        $("h2.title").css("background-color","red");//交集选择器，等于css当中的指定选择器(第一必须是标记选择器，第二个必须是类别选择器或者ID选择器，两个选择器之间不能有空格)
+        $("*").css("background-color","green");//全局选择器，改变所有元素的背景颜色
+        //层次选择器
+        $("div h2").css("background-color","red");//后代选择器，获取并设置div下h2元素背景颜色
+        $("div > h1").css("background-color","red");//子选择器，获取并设置div下h1子元素背景颜色（子元素为是直属的）
+        $("h2+h1").css("background-color","red");//相邻选择器，获取并设置h2元素之后相邻同辈元素h1背景颜色
+        $("h2~h1").css("background-color","red");//相邻选择器，获取并设置h2元素之后所有同辈元素h1背景颜色
+        //属性选择器
+        $("h2[name]").css("background-color","red");//改变含有name属性h2的背景颜色
+        $("h2[name='title']").css("background-color","green");//改变含有name属性名字等于title的h2的背景颜色
+        $("h2[name!='title']").css("background-color","green");//改变含有name属性名字不等于title的h2的背景颜色
+        $("h2[name^='t']").css("background-color","red");//改变含有name属性以字母t开头的h2的背景颜色
+        $("h2[name$='e']").css("background-color","green");//改变含有name属性以字母e结尾的h2的背景颜色
+        $("h2[name*='i']").css("background-color","red");//改变含有name属性以含有字母i的h2的背景颜色
+        $("h2[class][name*='i']").css("background-color","green");//改变还有class属性并且含有name属性以含有字母i的h2的背景颜色
+        //过滤选择器
+        $("li:first").css("background-color","#09F");//改变第一个li元素的背景颜色
+        $("li:lase").css("background-color","#09F");//改变最后一个li元素的背景颜色
+        $("li:even").css("background-color","#09F");//改变li元素索引值为偶数的背景颜色（索引从0开始）
+        $("li:odd").css("background-color","#09F");//改变li元素索引值为奇数的背景颜色（索引从1开始）
+        $("li:eq(1)").css("background-color","#09F");//改变li元素索引值等于1的背景颜色
+        $("li:gt(1)").css("background-color","#09F");//改变li元素索引值大于1的背景颜色
+        $("li:lt(1)").css("background-color","#09F");//改变li元素索引值小1的背景颜色
+        $("li:not(.title)").css("background-color","#09F");//改变class不为title的li元素的背景颜色
+        $(":header").css("background-color","#09F");//获取改变带有标题元素的背景颜色（列入<h1></h1>，h标签都为标题元素）
+        $(":focus").css("background-color","#09F");//获取当前选中的元素，改变元素的背景颜色
+        //可见性过滤选择器
+        $("li:visible").hide();//让li所有可见元素隐藏
+        $("li:hide").show();//让li所有不可见元素显示
+        //内容文本选择器
+        $("li:contains('运动鞋')").css("background-color","#09F");//改变li内容包含运动鞋的背景颜色（contains：包括、包含）
+        $("li:empty").css("background-color","#09F");//改变li内容为空的背景颜色（empty：空）
+        $("td:parent").css("background-color","gray");//含有子节点或文本的表格背景颜色改为灰色
+        //表单选择器
+        var $username=$(":input[name='username']")//获取用户名
+        var $psaaword=$(":psaaword[name='pwd']")//获取密码
+        var $repwd=$(":psaaword[name='repwd']")//获取确认密码
+        var $nickname=$("[name='nickname']")//获取昵称
+        var $radio=$(":radio:checked")//获取已选的单选框
+        var $checkbox=$(":checkbox:checked")//获取已选的复选框
+        var $selected=$(":selected")//获取已选的下拉框
+    }) 
+</script>
+</head>
+<body>
+<fieldset>
+    <legend>注册表单</legend>
+    <form onsubmit="return false;">
+        <div>
+                <h2 id="aa">嗷嗷嗷</h2>
+                <h2 class="title">嗷嗷嗷</h2>
+        </div>
+        <input type="hidden" name="pid" value="1"/>
+        <p>账号：<input type="text" name="username"  /></p>
+        <p>密码：<input type="password" name="pwd"  /></p>
+        <p>确认密码：<input type="password" name="repwd"  /></p>
+        <p>昵称：<input type="text" name="nickname"  /></p>
+        <p>性别：
+            <input type="radio" name="sex" value="1">男
+            <input type="radio"  name="sex" value="0">女
+        </p>
+        <p>爱好：
+            <input type="checkbox" name="hobby"  value="篮球" />篮球
+            <input type="checkbox" name="hobby"  value="足球" />足球
+            <input type="checkbox" name="hobby"  value="羽毛球" />羽毛球
+            <input type="checkbox" name="hobby"  value="其他" />其他
+        </p>
+        <p>省份：
+            <select>
+                <option value="">--省份--</option>
+                <option value="北京">北京</option>
+                <option value="云南">云南</option>
+                <option value="云南">云南</option>
+                <option value="其他" >其他</option>
+            </select>
+        </p>
+        <input type="submit" value="提交表单" />
+    </form>
+</fieldset>
+</body>
+</html>
