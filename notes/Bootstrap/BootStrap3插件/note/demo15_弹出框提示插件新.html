@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>弹出框（Popover）插件</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" style="padding:150px">
+        <div class="col-xs-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li><button type="button" id="xiaofeifei" class="btn btn-success">调用飞飞弹出框显示</button></li>
+                <li><button type="button" id="xiaolele" class="btn btn-primary">调用乐乐弹出框显示</button></li>
+                <li><button type="button" id="show" class="btn btn-danger">显示所有popover.Show</button></li>
+                <li><button type="button" id="hide" class="btn btn-warning">隐藏所有popover.Hide</button></li>
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <ul>
+                <!-- data-toggle="popover":定义弹出框插件，鼠标点击显示title属性标题和data-content属性内容，再次点击隐藏
+                title="*":填写显示弹出框标题
+                data-content="*":填写显示弹出框内容
+                data-placement="":top、left、right、bottom分别定义弹出框显示方向
+                class="popover-html":title属性内可以写入HTML代码 -->
+                <li>这是一个 <a href="#" class="popover-top" data-toggle="popover" data-placement="top" title="上方显示popover小飞飞" data-content="<h4>Popover 中的一些内容 ——弹出框、弹出框、弹出框、弹出框弹出框</h4>">小飞飞弹出框</a></li>
+                <li>这是一个 <a href="#" class="popover-left" data-toggle="popover" data-placement="left" title="左方显示popover小喵喵" data-content="<h4>Popover 中的一些内容 ——弹出框、弹出框、弹出框、弹出框弹出框</h4>">小喵喵弹出框</a></li>
+                <li>这是一个 <a href="#" class="popover-right" data-toggle="popover" data-placement="right" title="左方显示popover小猪猪" data-content="<h4>Popover 中的一些内容 ——弹出框、弹出框、弹出框、弹出框弹出框</h4>">小猪猪弹出框</a></li>
+                <li>这是一个 <a href="#" class="popover-bottom" data-toggle="popover" data-placement="bottom" title="下方显示popover小乐乐" data-content="<h4>Popover 中的一些内容 ——弹出框、弹出框、弹出框、弹出框弹出框</h4>">小乐乐弹出框</a></li>
+                <br><br><br>
+                <li>这是一个放大的 <a href="#" class="popover-html-title" data-toggle="popover" title="<h4>包裹h4中、俺只有标题，没有内容</h4>">popover 方法 options</a></li>
+                <br><br><br>
+                <li>这是一个放大的 <a href="#" class="popover-html-conten" data-toggle="popover" data-content="<h5>包裹h4中、俺只有内容，没有标题</h5>">popover 方法 options</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        // 使用popover必须JS先调用$("").popover()
+        // $("[data-toggle='popover']").popover();
+        // html:true?false 标题title属性中，true-可以写入HTML代码,false-禁用HTML代码
+        // show:500:延迟500秒显示
+        // show:500:延迟500秒隐藏
+        //$("[data-toggle='popover']").popover({html:true});
+        $("[data-toggle='popover']").popover({html:true,delay:{show:500,hide:500}});
+        //显示小飞飞弹出框
+        $("#xiaofeifei").click(function(){
+             $('.popover-top').popover('show');
+        })
+        //显示小乐乐弹出框
+        $("#xiaolele").click(function(){
+             $('.popover-bottom').popover('show');
+        })
+        //显示所有弹出框
+        $("#show").click(function(){
+             $('a').popover('show');
+        })
+        //隐藏所有弹出框
+        $("#hide").click(function(){
+             $('a').popover('hide');
+        })
+        
+        $("[data-toggle='popover']").on("show.bs.popover",function(){
+            //popover('show')显示之前执行事件
+            console.info("show.bs.popover");
+        }).on("shown.bs.popover",function(){
+            //popover('show')显示之前执行事件
+            console.info("shown.bs.popover");
+        }).on("hide.bs.popover",function(){
+            //popover('hide')显示之前执行事件
+            console.info("hide.bs.popover");
+        }).on("hidden.bs.popover",function(){
+             //popover('hide')显示之前执行事件
+            console.info("hidden.bs.popover");
+        });
+    });
+</script>
+</html>

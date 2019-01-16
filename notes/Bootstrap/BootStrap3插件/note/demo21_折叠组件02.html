@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>折叠（Collapse）插件 </title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- 
+        .col-xs-1:栅格布局
+        .col-xs-offset-1:栅格布局，向右移动一个单元格
+        .nav:导航元素
+        .nav-pills:呈现胶囊式导航菜单（Tab页）样式
+        .nav-stacked样式：导航设置为堆叠(垂直)效果
+    -->
+    <div class="container col-xs-1 col-xs-offset-1" style="padding-top:20px">
+        <ul class="nav nav-pills nav-stacked">
+            <li><button class="btn-show btn btn-success">show</button></li>
+            <li><button class="btn-hide btn btn-danger">hide</button></li>
+            <li><button class="btn-toggle btn btn-info">toggle</button></li>
+        </ul>
+    </div>
+    <!-- 
+        .panel:面板组件 
+        .panel-title:面板标题
+        .panel-body:面板内容
+        data-toggle="collapse" 添加到您想要展开或折叠的组件的链接上
+        href 或 data-target 属性添加到父组件，它的值是子组件的 id
+        data-parent 属性把折叠面板（accordion）的 id 添加到要展开或折叠的组件的链接上
+        .collapse:隐藏内容
+        .collapse in:显示内容
+        .collapsing:当过渡效果开始时被添加，当过渡效果完成时被移除
+    -->
+    <div class="container col-xs-9" style="padding:20px">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">第一部分</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="collapse in">
+                <div class="panel-body">
+                    <h4>第一部分</h4>
+                    <strong>collapseOne</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe reiciendis officiis fugiat nostrum officia suscipit aspernatur error minima amet temporibus, tempore ipsum vitae sit fuga, sint expedita tenetur. Nesciunt, quod.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-target="#collapseTwo" data-toggle="collapse" data-parent="#accordion">第二部分</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="collapsing">
+                    <div class="panel-body">
+                        <h4>第二部分</h4>
+                        <strong>collapseTwo</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe reiciendis officiis fugiat nostrum officia suscipit aspernatur error minima amet temporibus, tempore ipsum vitae sit fuga, sint expedita tenetur. Nesciunt, quod.
+                    </div>
+                </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-target="#collapseThree" data-toggle="collapse" data-parent="#accordion">第三部分</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="collapse in">
+                <div class="panel-body">
+                    <h4>第三部分</h4>
+                    <strong>collapseThree</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe reiciendis officiis fugiat nostrum officia suscipit aspernatur error minima amet temporibus, tempore ipsum vitae sit fuga, sint expedita tenetur. Nesciunt, quod.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapseFour" data-toggle="collapse" data-parent="#accordion">第四部分</a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="collapse in">
+                <div class="panel-body">
+                    <h4>第四部分</h4>
+                    <strong>collapseFour</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe reiciendis officiis fugiat nostrum officia suscipit aspernatur error minima amet temporibus, tempore ipsum vitae sit fuga, sint expedita tenetur. Nesciunt, quod.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+        $(function () { $('#collapseFour').collapse({
+        //toggle: true-折叠显示折叠组件 false- 展开显示折叠组件，默认展开
+            toggle: true
+        })});
+
+    $(function(){
+        //全部展开折叠组件
+        $(".btn-show").click(function(){
+            $("div[id*='collapse']").collapse("show");
+        })
+        //全部隐藏折叠组件
+        $(".btn-hide").click(function(){
+            $("div[id*='collapse']").collapse("hide");
+        })
+        //循环显示或隐藏折叠组件
+        $(".btn-toggle").click(function(){
+            $("div[id*='collapse']").collapse("toggle")
+            .on("show.bs.collapse",function(){
+                //JS折叠组件显示前执行事件
+                console.log("show.bs.collapse");
+            }).on("shown.bs.collapse",function(){
+                //JS折叠组件显示后执行事件
+                console.log("shown.bs.collapse")
+            }).on("hide.bs.collapse",function(){
+                //JS折叠组件隐藏后执行事件
+                console.log("hide.bs.collapse")
+            }).on("hidden.bs.collapse",function(){
+                //JS折叠组件隐藏后执行事件
+                console.log("hidden.bs.collapse")
+            })
+        })
+    })
+</script>
+</html>
+

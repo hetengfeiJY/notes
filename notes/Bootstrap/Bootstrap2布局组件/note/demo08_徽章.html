@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>徽章</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body style="padding:50px;">
+    <!-- span标签+.badge样式：设置徽章，例如：<span class="badge">50</span> 其中50为徽章内容 -->
+    <div class="container" style="padding:20px">
+        <h2>徽章</h2>
+        <a href="#">Email <span class="badge">50</span></a>
+    </div>
+    <h4>胶囊式导航中的激活状态</h4>
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">首页 <span class="badge">42</span></a>
+        </li>
+        <li><a href="#">简介</a>
+        </li>
+        <li><a href="#">消息 <span class="badge">重要3</span></a>
+        </li>
+    </ul>
+    <br>
+    <h4>列表导航中的激活状态</h4>
+    <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+        <li class="active">
+            <a href="#">
+                <span class="badge pull-right">42</span>
+                首页
+            </a>
+        </li>
+        <li><a href="#">简介</a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="badge pull-right">重要3</span>
+                消息
+            </a>
+        </li>
+    </ul>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

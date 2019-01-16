@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分页</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body style="padding:20px;">
+    <!-- 
+    pagination样式：添加该 class 来在页面上显示分页 
+    active样式：默认选中，指示当前的页面
+    disbaled样式：定义不可点击的链接
+    Pager样式：添加该 class 来获得翻页链接
+    previous样式： 把链接向左对齐
+    next样式： 把链接向右对齐。 
+    pull-left样式：左浮动
+    pagination-lg样式：外观大小，大分页
+    pagination：外观大小，默认分页
+    pagination-sm 样式：外观大小，小分页
+     -->
+    <div class="container">
+        <h2>1.默认的分页</h2>
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a>
+            </li>
+            <li><a href="#">1</a>
+            </li>
+            <li><a href="#">2</a>
+            </li>
+            <li><a href="#">3</a>
+            </li>
+            <li><a href="#">4</a>
+            </li>
+            <li><a href="#">5</a>
+            </li>
+            <li><a href="#">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>2.分页的状态</h2>
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a>
+            </li>
+            <li class="active"><a href="#">1</a>
+            </li>
+            <li class="disabled"><a href="#">2</a>
+            </li>
+            <li><a href="#">3</a>
+            </li>
+            <li><a href="#">4</a>
+            </li>
+            <li><a href="#">5</a>
+            </li>
+            <li><a href="#">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container" style="padding:20px">
+        <h2>3.分页的大小</h2>
+        <div class="pull-left">
+            <h4>大分页</h4>
+            <ul class="pagination pagination-lg">
+                <li><a href="#">&laquo;</a>
+                </li>
+                <li class="active"><a href="#">1</a>
+                </li>
+                <li class="disabled"><a href="#">2</a>
+                </li>
+                <li><a href="#">3</a>
+                </li>
+                <li><a href="#">4</a>
+                </li>
+                <li><a href="#">5</a>
+                </li>
+                <li><a href="#">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-left">
+            <h4>默认分页</h4>
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a>
+                </li>
+                <li class="active"><a href="#">1</a>
+                </li>
+                <li class="disabled"><a href="#">2</a>
+                </li>
+                <li><a href="#">3</a>
+                </li>
+                <li><a href="#">4</a>
+                </li>
+                <li><a href="#">5</a>
+                </li>
+                <li><a href="#">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-left">
+            <h4>小分页</h4>
+            <ul class="pagination pagination-sm">
+                <li><a href="#">&laquo;</a>
+                </li>
+                <li class="active"><a href="#">1</a>
+                </li>
+                <li class="disabled"><a href="#">2</a>
+                </li>
+                <li><a href="#">3</a>
+                </li>
+                <li><a href="#">4</a>
+                </li>
+                <li><a href="#">5</a>
+                </li>
+                <li><a href="#">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h2>4.翻页Pager</h2>
+        <ul class="pager">
+            <li><a href="#">上一页</a>
+            </li>
+            <li class="active"><a href="#">1</a>
+            </li>
+            <li class="disabled"><a href="#">2</a>
+            </li>
+            <li><a href="#">3</a>
+            </li>
+            <li><a href="#">4</a>
+            </li>
+            <li><a href="#">5</a>
+            </li>
+            <li><a href="#">下一页</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <h2>5.翻页对齐方式</h2>
+        <ul class="pager">
+            <li class="previous"><a href="#">&larr;上一页</a>
+            </li>
+            <li class="active"><a href="#">1</a>
+            </li>
+            <li class="disabled"><a href="#">2</a>
+            </li>
+            <li><a href="#">3</a>
+            </li>
+            <li><a href="#">4</a>
+            </li>
+            <li><a href="#">5</a>
+            </li>
+            <li class="next"><a href="#">下一页&rarr;</a>
+            </li>
+        </ul>
+    </div>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

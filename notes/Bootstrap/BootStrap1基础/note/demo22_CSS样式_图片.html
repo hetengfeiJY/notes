@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- 图片img类：
+    img-rounded样式：为图片添加圆角(IE8不支持) 
+    img-circle样式： 将图片变为椭圆形(IE8不支持) 
+    img-thumbnail样式：将图片变为略缩图
+    img-responsive样式：让图片支持响应式，将很好地扩展到父元素 (通过改变窗口大小查看效果) 
+    -->
+    <!--1. 基本案例-三种类型的图片样式-->
+    <div class="container" style="padding:50px;">
+        <form action="" class="form-inline">
+            <div class="form-group col-lg-4" >
+                <img src="../img/gougou.jpg" class="img-rounded img-responsive" alt="狗狗"> 
+            </div>
+            <div class="form-group col-lg-4">
+                <img src="../img/gougou.jpg" class="img-circle img-responsive" alt="狗狗">
+            </div>
+            <div class="form-group col-lg-4">
+                <img src="../img/gougou.jpg" class="img-thumbnail img-responsive" alt="狗狗">
+            </div>
+        </form>
+    </div>
+    
+   <!-- 2.响应式图片-->
+    <div class="container" style="padding:40px;">
+        <h2>图片</h2>
+        <p> .img-responsive类让图片支持响应式，将很好地扩展到父元素 (通过改变窗口大小查看效果):</p> 
+        <img src="../img/one.jpg" class="img-responsive" alt="旅游">
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>

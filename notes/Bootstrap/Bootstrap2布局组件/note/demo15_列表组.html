@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>列表组</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body style="padding:50px;">
+    <!-- 
+    列表组件用于以列表形式呈现复杂的和自定义的内容。创建一个基本的列表组的步骤如下： 
+    .list-group:向元素 <ul> 添加 class .list-group。 
+    .list-group-item:向 <li> 添加 class .list-group-item。
+    .list-group-item-heading：列表组头部样式，应用在标题<h*>标签，使list-group-item中字体变大加粗
+    .list-group-item-text:列表组文本样式，应用在<p>标签内
+    .badge：徽章<span class="badge">  
+    .active:激活，使a链接处于激活状态
+    -->
+    <!--1. 基本列表组-->
+    <h2>基本列表组</h2>
+    <ul class="list-group">
+        <li class="list-group-item">JavaScript从入门到精能</li>
+        <li class="list-group-item">BootStrap响应式布局</li>
+        <li class="list-group-item">Java零基础到项目实战</li>
+        <li class="list-group-item">HTML5+CSS3网页编程</li>
+    </ul>
+    
+    <!--2. 带有徽章的列表组-->
+    <h2>带有徽章的列表组</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+        <span class="badge">2</span>
+        JavaScript从入门到精能
+        </li>
+        <li class="list-group-item">
+          <span class="badge">10</span>
+           BootStrap响应式布局
+        </li>
+        <li class="list-group-item">
+        <span class="badge">缺货</span>
+        Java零基础到项目实战
+        </li>
+        <li class="list-group-item">
+          HTML5+CSS3网页编程
+          <span class="badge">8</span>
+        </li>
+    </ul>
+    
+     <!--3. 带有链结的列表组-->
+     <h2>带有链结的列表组</h2>
+    <div class="list-group">
+        <a href="#" class="list-group-item ">JavaScript从入门到精能</a>
+        <a href="#" class="list-group-item active">
+          <span class="badge">缺货</span>
+           BootStrap响应式布局
+        </a>
+        <a href="#" class="list-group-item">
+        Java零基础到项目实战
+        </a>
+        <a href="#" class="list-group-item">
+          HTML5+CSS3网页编程
+        </a>
+    </div>
+
+   <!--4. 自定义内容的列表组-->
+   <h2>自定义内容的列表组</h2>
+   <div class="list-group">
+        <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">JavaScript从入门到精能</h4>
+        </a>
+        <a href="#" class="list-group-item ">
+            <h4 class="list-group-item-heading">BootStrap响应式布局</h4>
+            <p class="list-group-item-text">
+                栅格布局：从折叠刀水平，从流式到容器
+            </p>
+        </a>
+        <a href="#" class="list-group-item">
+        Java零基础到项目实战
+        </a>
+        <a href="#" class="list-group-item">
+          HTML5+CSS3网页编程
+        
+        </a>
+    </div>
+
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

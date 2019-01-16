@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>警告</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body style="padding:50px;">
+    <!-- 
+    alert样式：添加警告
+    alert-success样式：添加成功(success)、信息(info)、警告(warning)、错误(danger)提示信息背景颜色
+    alert-dismissable样式：可取消的警告
+    data-dismiss="alert"属性：添加一个关闭按钮  
+    alert-link样式：快速提供带有匹配颜色的链接。 
+    -->
+    <!--<div class="alert alert-success">成功，很好的完成了操作！</div>
+    <div class="alert alert-info">信息，请注意查收！</div>
+    <div class="alert alert-warning">警告，请输入密码！</div>
+    <div class="alert alert-danger">错误，请重新输入！</div>-->
+    
+    <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    成功，很好的完成了操作！
+    </div>
+    <div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    信息，请注意查收！</div>
+    <div class="alert alert-warning alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    警告，请输入密码！</div>
+    <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    错误，请重新输入！</div>
+    
+      <div class="alert alert-success alert-dismissable">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <a href="#" class="alert-link">如5秒钟内未跳转，请点击！</a>
+      </div>
+    
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

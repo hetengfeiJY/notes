@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--1. 基本表单
+    form样式：默认不显示，基本表单
+    form-group样式：在表单内设置分组
+    form-control样式：设置控件并绑定控件默认样式
+    col-sm-offset-2样式:栅格布局，向右偏移两列
+    -->
+    <div class="container" style="padding:20px;">
+        <h1>1. 基本表单</h1>
+        <form role="form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email Address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassWord1">PassWord</label>
+                <input type="password" class="form-control" id="exampleInputPassWord1" placeholder="PassWord">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile1">File Input</label>
+                <input type="file" id="exampleInputFile1">
+                <p class="help-block">Example block-level help text here</p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">Check me</input>
+                </label>
+            </div>
+
+            <button class="btn btn-default" type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <!--2. 内联表单
+    form-inline样式：设置为内联排列表单
+    -->
+    <div class="container" style="padding:20px;">
+        <h1>2. 内联表单</h1>
+        <form role="form" class="form-inline">
+            <div class="form-group">
+                <label for="exampleInputEmail2" class="sr-only">Email Address</label>
+                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassWord2" class="sr-only">PassWord</label>
+                <input type="password" class="form-control" id="exampleInputPassWord2" placeholder="PassWord">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile1">File Input</label>
+                <input type="file" id="exampleInputFile1">
+                <p class="help-block">Example block-level help text here</p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">Remember me</input>
+                </label>
+            </div>
+
+            <button class="btn btn-default" type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <!--3. 水平排列表单
+    form-horizontal样式：设置为水平排列表单
+    -->
+    <div class="container" style="padding:20px;">
+        <h1>3. 水平排列表单</h1>
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <label for="exampleInputEmail3" class="col-sm-2 control-label">Account</label>
+                <div class="col-sm-2">
+                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter Account">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassWord3" class="col-sm-2 control-label">PassWord</label>
+                <div class="col-sm-2">
+                    <input type="password" class="form-control" id="exampleInputPassWord3" placeholder="PassWord">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <label>
+                        <input type="checkbox">Remember me</input>
+                    </label>
+                    <label>
+                        <input type="checkbox">Remember me</input>
+                    </label>
+                    <label>
+                        <input type="checkbox">Remember me</input>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-default" type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <!--4. 表单支持控件
+    type="text"：文本框
+    textarea标签：多行文本框
+    type="email"：包含email正则表达式特性的文本框
+    type="password"：密码特性的文本框
+    type="file"：浏览文件的按钮
+    type="checkbox"：多选框
+    type="radio"：单选框
+    type="checkbox"：单选框
+    select标签：单行选择下拉控件
+    select标签+multiple属性：多行选择控件
+    placeholder属性：placeholder=""默认显示文本
+    radio样式:内置单选样式，默认上下排列，当name属性相同选择时互斥
+    radio-inline样式:内置单选样式，水平排列，当name属性相同选择时互斥
+    checkbox-inline:内置复选框样式，默认上下排列
+    checkbox-inline:内置复选框样式，水平排列
+    -->
+    <div class="container" style="padding:20px;">
+        <h1>4. 表单支持控件</h1>
+        <input type="text" class="form-control" placeholder="TextInput">
+        <h2>textarea</h2>
+        <textarea class="form-control" rows="3"></textarea>
+        <h2>checkbox\radio</h2>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">CheckBox01
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="sex" value="1">男
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="sex" value="2">女
+            </label>
+        </div>
+        <div class="radio">
+                <label>
+                    <input type="radio" name="sex" value="3">禽兽
+                </label>
+        </div>
+
+        <label for="checkbox01" class="checkbox-inline">
+            <input type="checkbox" id="checkbox01" value="1">复选框A
+        </label>
+        <label for="checkbox02" class="checkbox-inline">
+            <input type="checkbox" id="checkbox02" value="2">复选框B
+        </label>
+
+        <label for="radio01" class="radio-inline">
+            <input type="radio" name="answer" id="radio01" value="1">选项A
+        </label>
+        <label for="radio02" class="radio-inline">
+            <input type="radio" name="answer" id="radio02" value="2">选项B
+        </label>
+
+        <h2>Select控件</h2>
+        <div>
+            <select class="form-control input-lg" style="width:300px">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            请选择<span class="caret"></span>
+            <select multiple class="form-control">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select>
+        </div>
+
+    </div>
+
+    <!--5. 静态控件
+    form-control-static样式：设置控件为静态
+    -->
+    <div class="container" style="padding:20px;">
+        <h2>5. 静态控件</h2>
+        <form action="" class="form-horizontal">
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">fwytech@126.com</p>
+                </div>
+            </div>
+        </form>
+    </div>
+   
+
+
+    <!--6. 控件状态
+    disabled样式:设置控件状态为不可交互响应(即不可编辑)
+    fieldset标签+disabled属性:设置fieldset标签标签内所有控件状态为不可交互响应(即不可编辑)，link超链接不包含在范围内(设置link请配合JavaScript来实现)
+    -->
+    <div class="container" style="padding:20px;">
+        <h2>6. 控件状态</h2>
+        <form action="">
+            <input type="text" class="form-control" placeholder="Disabled Input" disabled>
+        </form>
+
+        <form role="form">
+            <fieldset disabled>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email Address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassWord1">PassWord</label>
+                    <input type="password" class="form-control" id="exampleInputPassWord1" placeholder="PassWord">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile1">File Input</label>
+                    <input type="file" id="exampleInputFile1">
+                    <p class="help-block">Example block-level help text here</p>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">Check me</input>
+                    </label>
+                </div>
+
+                <button class="btn btn-default" type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <!--7. 校验状态
+    has-success样式:绿色边框，成功校验状态
+    has-warning样式:黄色边框，危险谨慎校验状态
+    has-error样式:红色表框，错误校验状态
+    -->
+    <div class="container" style="padding:20px;">
+        <h2>7. 校验状态</h2>
+        <form role="form">
+            <div class="form-group has-success">
+                <label for="exampleInputEmail1">Email Address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
+            </div>
+            <div class="form-group has-warning">
+                <label for="exampleInputPassWord1">PassWord</label>
+                <input type="password" class="form-control" id="exampleInputPassWord1" placeholder="PassWord">
+            </div>
+
+            <div class="form-group has-error">
+                <label for="text01">PassWord</label>
+                <input type="text" class="form-control" id="text01" placeholder="Test">
+            </div>
+        </form>
+    </div>
+
+    <!--8. 控件尺寸
+    input-lg样式：设置大尺寸
+    不填写:默认尺寸
+    input-sm样式：设置偏小尺寸
+    -->
+    <div class="container" style="padding:20px;">
+        <h2>8. 控件尺寸</h2>
+        <form role="form">
+
+            <input type="email" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter Email">
+
+            <input type="password" class="form-control" id="exampleInputPassWord1" placeholder="PassWord">
+
+            <input type="text" class="form-control input-sm" id="text01" placeholder="Test">
+
+            <select class="form-control input-lg">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <select class="form-control input-sm">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+        </form>
+
+        <form role="form">
+            <div class="row">
+                <div class="col-sm-2">
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
+                </div>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="exampleInputPassWord1" placeholder="PassWord">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="text01" placeholder="Test">
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <!--9. 帮助文本
+    span标签+help-block样式：帮助文本控件
+    -->
+    <div class="container" style="padding:20px;">
+        <h2>9. 帮助文本</h2>
+        <form role="form">
+            <input type="text" class="form-control" placeholder="UserName">
+            <span class="help-block">请输入用户名！</span>
+        </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>警告框（Alert）插件</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" style="padding:50px;">
+
+        <div class="alert alert-success" id="alert-success">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>成功！</strong>恭喜你进入系统。
+        </div>
+        <div  class="alert alert-warning">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>警告！</strong>您的网络连接有问题。
+        </div>
+        
+         <div  class="alert alert-info">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>信息！</strong>请登录系统。
+        </div>
+         <div  class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>危险！</strong>您确定要做此操作吗？
+        </div>
+    </div>
+    <button type="button" class="btn btn-default">全部关闭(Close)</button>
+    <script>
+      $(function(){
+            // $(".alert").alert();
+            $("button").click(function(){
+            //关闭所有警告框
+                $(".alert").alert("close");
+            })
+            //点击cless="alert-success"警告框执行点击前点击后事件
+            $("#alert-success").on("close.bs.alert",function(){
+                //点击警告框前执行的事件
+                //弹出提示，是否进行操作
+                if (!confirm("您确定要关闭此警告框吗？")){
+                    return false;
+                }
+            }).on("closed.bs.alert",function(){
+                //点击警告框后执行的事件
+                console.log("closed.bs.alert");
+            })
+       })
+    </script>
+</body>
+</html>

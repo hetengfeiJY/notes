@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- 1. 选项按钮
+    btn btn-default样式：渐变标准灰色，默认按钮
+    btn btn-primary样式：蓝色，提供额外的视觉感，可在一系列按钮中指出主要操作
+    btn btn-success样式：浅蓝色，可作为默认样式的代替样式
+    btn btn-info样式：绿色，标识成功或积极的动作
+    btn btn-warning样式：黄色，提示应该谨慎的动作
+    btn btn-danger样式：洪作，提示危险或存在危险的动作
+    btn btn-link样式：浅蓝色，简化一个按钮，是他看起来像一个连接同时保持按钮的行为
+    -->
+    <div class="container">
+        <button class="btn btn-default" type="buttton">Default</button>
+        <button class="btn btn-primary" type="button">Primary</button>
+        <button class="btn btn-success" type="button">Success</button>
+        <button class="btn btn-info" type="button">Info</button>
+        <button class="btn btn-warning" type="button">Warning</button>
+        <button class="btn btn-danger" type="button">Danger</button>
+        <button class="btn btn-link" type="button">Link</button>
+    </div>
+    
+     <!-- 2. 选项尺寸
+    btn btn-lg样式：设置大尺寸
+    btn btn-sm样式：设置中等尺寸
+    btn btn-small样式：默认尺寸(不用填写)
+    btn btn-xs样式：设置最小尺寸
+    btn btn-block样式：使按钮设置为块样式，+lg样式可填充满整个父容器
+    -->
+    <div class="container">
+       <p>
+        <button class="btn btn-default btn-lg" type="buttton">Large Default Button</button>
+        <button class="btn btn-primary btn-lg" type="button">Large Primary Button</button>
+       </p>
+       <p>
+        <button class="btn btn-success" type="button">Default Success Button</button>
+        <button class="btn btn-info" type="button">Default Info Button</button>
+       </p>
+       <p>
+        <button class="btn btn-warning btn-sm" type="button">Small Warning Button</button>
+        <button class="btn btn-danger btn-sm" type="button">Small Danger Button</button>
+       </p>
+       
+       <p>
+        <button class="btn btn-warning btn-xs" type="button">Extra Small Button</button>
+        <button class="btn btn-danger btn-xs" type="button">Extra Small Button</button>
+       </p>
+       
+       <p>
+        <button class="btn btn-warning btn-lg btn-block" type="button">Block Level Button</button>
+        <button class="btn btn-danger btn-lg btn-block" type="button">Block Level Button</button>
+       </p>
+    </div>
+    
+    <!--3.设置按钮活动状态 
+    btn active样式:默认使控件成为活动状态，即点击后的状态
+    -->
+    <div class="container">
+        <p>
+        <button class="btn btn-default active" type="button">Active Default Button</button>
+        <button class="btn btn-danger active" type="button">Active  Danger Button</button>
+       </p>
+    </div>
+    
+     <!--4.设置按钮禁用状态 
+    disabled属性：即disabled="disabled"，设置控件为不可交互响应状态，不可点击
+    btn disabled样式：设置控件为不可交互响应状态，不可点击
+    -->
+    <div class="container">
+        <p>
+        <button class="btn btn-default " type="button" disabled="disabled">Disabled Default Button</button>
+        <button class="btn btn-info disabled" type="button" >Disabled  Info Button</button>
+        
+        <a href="#" class="btn btn-primary disabled" role="button">Primary Disabled Button</a>
+        <a href="#" class="btn btn-default" role="button" disabled="disabled">Default Disabled Button</a>
+       </p>
+    </div>
+    
+    <!--5.可做按钮使用的HTML标签 
+    <button type="submit">
+    <button type="button">
+    <a href="#" role="button">
+    <input type="submit">
+    <input type="button">
+    -->
+    <div class="container">
+        <button class="btn btn-default" type="submit">Submit</button>
+        <button class="btn btn-parimary" type="button">Button</button>
+        <a href="#" class="btn btn-warning" role="button">Link Button</a>
+        <input type="button" class="btn btn-default" type="submit" value="Input Button">
+        <input type="button" class="btn btn-default" type="button" value="Input Button">
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

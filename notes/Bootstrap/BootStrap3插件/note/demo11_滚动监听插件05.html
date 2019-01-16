@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>滚动监听插件</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        body {
+            position: relative;
+        }
+        ul.nav-pills {
+            top: 20px;
+            /* position: fixed; */
+        }
+        div.col-sm-9 div {
+            height: 250px;
+            font-size: 28px;
+        }
+        #section1 {
+            color: #fff;
+            background-color: #1E88E5;
+        }
+        #section2 {
+            color: #fff;
+            background-color: #673ab7;
+        }
+        #section3 {
+            color: #fff;
+            background-color: #ff9800;
+        }
+        #section41 {
+            color: #fff;
+            background-color: #00bcd4;
+        }
+        #section42 {
+            color: #fff;
+            background-color: #009688;
+        }
+        @media screen and (max-width: 810px) {
+            #section1,
+            #section2,
+            #section3,
+            #section41,
+            #section42 {
+                margin-left: 150px;
+            }
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<!-- 监听：body添加data-spy="scroll"
+     监听位置：Bootstrap .nav 组件的父元素的 ID 或 class 的属性 data-target
+     data-offset标签:默认值10,data-offset 当计算滚动位置时，距离顶部的偏移像素。 
+     a标签href="#*"属性：锚点定位，点击定位到id=#*的指定位置
+-->
+  <div class="container">
+    <div class="row">
+      <nav class="col-sm-3" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked" data-spy="affix">
+          <li class="active"><a href="#section1">Section 1</a></li>
+          <li><a href="#section2">Section 2</a></li>
+          <li><a href="#section3">Section 3</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section41">Section 4-1</a></li>
+              <li><a href="#section42">Section 4-2</a></li>                     
+            </ul>
+          </li>
+          <span id="activeitem" style="color:red;"></span>
+        </ul>
+      </nav>
+      <div class="col-sm-9">
+        <div id="section1">    
+          <h1>Section 1</h1>
+          <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          <small><a href="#" onclick="removeSection(this);"> &times; 删除该部分</a></small>
+        </div>
+        <div id="section2"> 
+          <h1>Section 2</h1>
+          <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          <small><a href="#" onclick="removeSection(this);"> &times; 删除该部分</a></small>
+        </div>        
+        <div id="section3">         
+          <h1>Section 3</h1>
+          <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          <small><a href="#" onclick="removeSection(this);"> &times; 删除该部分</a></small>
+        </div>
+        <div id="section41">         
+          <h1>Section 4-1</h1>
+          <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          <small><a href="#" onclick="removeSection(this);"> &times; 删除该部分</a></small>
+        </div>      
+        <div id="section42">         
+          <h1>Section 4-2</h1>
+          <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          <small><a href="#" onclick="removeSection(this);"> &times; 删除该部分</a></small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(function(){
+      removeSection = function(e) {
+      //查找id包含section父级元素，并删除
+      $(e).parents("div[id*='section']").remove();
+      //删除一个元素节点后，重新对所有节点绑定监听(增加删除节点必须重新绑定)
+      $("[data-spy ='scroll']").each(function () {
+          var $spy = $(this).scrollspy('refresh')
+      });
+    }
+    //$('body').scrollspy({ target: '.navbar-example' })手动向页面(body)添加监听属性
+    //$("#myScrollspy").scrollspy(); 手动JS执行监听组件
+    //activate.bs.scrollspy 每当一个新项目被滚动监听激活 时，触发该事件
+    $('#myScrollspy').on('activate.bs.scrollspy', function () {
+      var currentItem = $(".nav li.active > a").text();
+      $("#activeitem").html("目前您正在查看 - " + currentItem);
+    })
+  });
+  </script>
+</body>
+</html>
+

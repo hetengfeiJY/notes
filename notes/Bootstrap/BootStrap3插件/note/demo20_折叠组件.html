@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+   <div class="container" style="padding:20px">
+       <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#area">
+          简单的折叠按钮组件
+       </button>
+       <div class="collapse  in" id="area">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quisquam exercitationem illo architecto quam perspiciatis autem nobis ipsam, itaque, commodi maiores reprehenderit asperiores nulla nisi recusandae ipsum aliquam vitae. Quos.
+       </div>
+   </div>
+   <script>
+        $(function(){
+            $("#area").on("show.bs.collapse",function(){
+                console.log("show.bs.collapse");
+            }).on("shown.bs.collapse",function(){
+                console.log("shown.bs.collapse")
+            }).on("hide.bs.collapse",function(){
+                console.log("hide.bs.collapse")
+            }).on("hidden.bs.collapse",function(){
+                console.log("hidden.bs.collapse")
+            })
+        }) 
+   </script>
+</body>
+</html>
+

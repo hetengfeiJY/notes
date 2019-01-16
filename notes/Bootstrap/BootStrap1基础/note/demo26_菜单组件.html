@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container" style="margin-top: 200px">
+       <!-- 1. 基本菜单
+        divider样式：显示下划线效果
+        -->
+        <div class="dropdown open col-xs-3">
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#">菜单1</a><li>
+                <li><a tabindex="-1" href="#">菜单2</a></li>
+                <li><a tabindex="-1" href="#">菜单3</a></li>
+                <li class="divider"></li>
+                <li><a tabindex="-1" href="#">菜单5</a></li>
+            </ul>
+        </div>
+        
+        <!--2.设置菜单文字对齐
+            text-right样式：右对齐
+            text-center:居中
+            text-left(默认)：左对齐
+        -->
+        <div class="dropdown open col-xs-3">
+            <ul class="dropdown-menu text-right">
+                <li class="text-left"><a tabindex="-1" href="#">菜单1</a><li>
+                <li class="text-center"><a tabindex="-1" href="#">菜单2</a></li>
+                <li class="text-right"><a tabindex="-1" href="#">菜单3</a></li>
+                <li class="divider"></li>
+                <li class="text-center"><a tabindex="-1" href="#">菜单5</a></li>
+            </ul>
+        </div>
+
+        <!--3.带标题的菜单
+        dropdown-header样式：设置标题样式，并且鼠标不可点击
+        disabled样式：显示禁用标识和效果，但点击还是能够触发事件的，需要配合JS来实现彻底的禁用
+        dropup样式：设置上弹按钮，上弹属性，下拉框向上拉出
+        span标签+caret样式：设置倒三角标识
+        -->
+        <div class="dropdown col-xs-3">
+            <botton type="button" class="btn btn-default" data-toggle="dropdown">
+                下拉按钮<span class="caret"></span>
+            </botton>
+                <ul class="dropdown-menu ">
+                    <li class="dropdown-header">我是标题</li>
+                    <li><a tabindex="1" href="#">菜单1</a><li>
+                    <li><a tabindex="2" href="#">菜单2</a></li>
+                    <li><a tabindex="3" href="#">菜单3</a></li>
+                    <li class="dropdown-header">我是标题</li>
+                    <li class="text-right disabled"><a tabindex="-1" href="http://www.baidu.com">菜单4</a></li>
+                    <li class="text-right"><a tabindex="4" href="#">菜单5</a></li>
+                </ul>
+        </div>
+        <div class="dropdown dropup col-xs-3">
+            <button class="btn btn-default" data-toggle="dropdown">
+                上弹按钮<span class="caret"></span>
+            </button>
+                <ul class="dropdown-menu ">
+                    <li class="dropdown-header">我是标题</li>
+                    <li><a tabindex="1" href="#">菜单1</a><li>
+                    <li><a tabindex="2" href="#">菜单2</a></li>
+                    <li><a tabindex="3" href="#">菜单3</a></li>
+                    <li class="dropdown-header">我是标题</li>
+                    <li class="text-right disabled"><a tabindex="-1" href="http://www.baidu.com">菜单4</a></li>
+                    <li class="text-right"><a tabindex="4" href="#">菜单5</a></li>
+                </ul>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

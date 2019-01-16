@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>按钮（Button）插件</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h4>按钮加载状态</h4>
+        <!-- 向 button 元素添加 data-loading-text="Loading..."  
+        data-loading-text="*":JS执行button("loading")，替换按钮文本
+        data-complete-text="*"：JS执行button("complete")，替换按钮文本
+        -->
+        <div class="container" style="padding:20px">
+            <button class="btn btn-primary btn-loading" type="button" data-loading-text="加载中...">获取数据</button>
+                <button class="btn btn-primary btn-string" type="button" >演示button(String)</button>
+                <button class="btn btn-primary btn-complete" data-loading-text="加载中..."  data-complete-text="Loading finished" type="button" >演示button(complete)</button>
+        </div>
+        <h4>单个切换,两个或多个按钮相互切换状态</h4>
+        <!-- 激活单个按钮的切换（即改变按钮的正常状态为按压状态，反之亦然），只需向 button 元 素添加 data-toggle="button" 作为其属性即可 -->
+        <div class="container" style="padding:20px">
+            <button class="btn btn-success" data-toggle="button">点击凹陷点击凸起</button>
+            <button class="btn btn-warning" data-toggle="button">点击凹陷点击凸起</button>
+        </div>
+        <h4>按钮单选按钮（Radio</h4>
+        <!-- 向 btn-group 添加 data 属性 data-toggle="buttons" 来 添加单选按钮组的切换 -->
+        <div class="container">
+            <div class="btn-group" data-toggle="buttons">
+                <label  class="btn btn-primary">
+                    <input type="radio" name="options" id="opt1">选项1
+                </label>
+                <label  class="btn btn-primary">
+                    <input type="radio" name="options" id="opt2">选项2
+                </label>
+                <label  class="btn btn-primary">
+                    <input type="radio" name="options" id="opt3">选项3
+                </label>
+            </div>
+        </div>
+        <h4>按钮复选框（Checkbox）</h4>
+        <!-- 向btn-group 添加 data 属性 data-toggle="buttons" 来添加复选框 组的切换 -->
+        <div class="container">
+            <div class="btn-group" data-toggle="buttons">
+                <label  class="btn btn-primary">
+                    <input type="checkbox">选项1
+                </label>
+                <label  class="btn btn-primary">
+                    <input type="checkbox">选项2
+                </label>
+                <label  class="btn btn-primary">
+                    <input type="checkbox">选项3
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $(".btn-loading").click(function () {
+            //button("loading")：加载时，按钮内容替换为data-loading-text属性定义内容
+            //button("reset")：按钮内容初始化
+            //delay(1000)：等待1000毫秒
+            //queue()：加载时进入列队执行脚本
+            $(this).button("loading").delay(1000).queue(function () {
+                //加载1000毫秒后，进入列队把按钮内容还原为初始状态
+                $(this).button("reset");
+            })
+        });
+        
+        $(".btn-string").click(function(){
+            //替换自定义文本
+            $(this).button("string");
+        });
+        
+        $(".btn-complete").click(function(){
+            $(this).button("loading").delay(1000).queue(function(){
+                //加载1000毫秒后，进入列队，按钮初始化并替换为data-complete-text属性定义内容
+                $(this).button("complete");
+            });
+        })
+    })
+</script>
+</html>
+

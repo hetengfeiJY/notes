@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>板面</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body style="padding:50px;">
+    <!-- 1. 基本的面板-->
+    <h2>基本的面板</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            我是带有标题样式的面板
+        </div>
+    </div>
+    <div class="panel panel-default">
+       <div class="panel-body">
+            我是带有内容样式的面板
+       </div>
+   </div>
+    <!-- 2. 带有标题的面板-->
+    <h2>带有标题的面板</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            面板1标题
+        </div>
+        <div class="panel-body">
+            hello,我是面板1的内容
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+           <h3 class="panel-title">面板2标题</h3> 
+        </div>
+        <div class="panel-body">
+            hello,我是面板2的内容
+        </div>
+    </div>
+   
+    <!-- 3. 带有脚注的面板-->
+    <h2>带有脚注的面板</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            面板1标题
+        </div>
+        <div class="panel-body">
+            hello,我是面板1的内容
+        </div>
+        <div class="panel-footer">面板脚注</div>
+    </div>
+    <!-- 4. 带有状态的面板-->
+    <h2>带有状态的面板</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="panel-body">
+            hello,我是默认状态面板0的内容
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="panel-body">
+            hello,我是成功状态面板2的内容
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="panel-body">
+            hello,我是信息状态面板3的内容
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="panel-body">
+            hello,我是重要状态面板1的内容
+        </div>
+    </div>
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="panel-body">
+            hello,我是警告状态面板4的内容
+        </div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="panel-body">
+            hello,我是错误状态面板5的内容
+        </div>
+    </div>
+
+    <!-- 5. 表格面板-->
+    <h2>表格面板</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="panel-body">
+            我是面板的内容
+        </div>
+        <table class="table">
+            <th>产品</th>
+            <th>价格</th>
+            <tr>
+                <td>产品 A</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>产品 B</td>
+                <td>400</td>
+            </tr>
+        </table>
+        <div class="panel-footer">
+            total:600￥
+        </div>
+
+    </div>
+
+    <!-- 6.包含有列表组的面板-->
+    <h2>包含有列表组的面板</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="panel-body">
+            我是面板的内容
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">免费域名注册</li>
+            <li class="list-group-item">免费 Window 空间托管</li>
+            <li class="list-group-item">图像的数量</li>
+            <li class="list-group-item">24*7 支持</li>
+            <li class="list-group-item">每年更新成本</li>
+        </ul>
+    </div>
+
+    <!-- 7.包含有链结的列的面板-->
+    <h2>包含有链结的列的面板</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            标题
+        </div>
+        <div class="list-group">
+            <a href="#" class="list-group-item ">JavaScript从入门到精能</a>
+            <a href="#" class="list-group-item active">
+              <span class="badge">缺货</span>
+               BootStrap响应式布局
+            </a>
+            <a href="#" class="list-group-item">
+            Java零基础到项目实战
+            </a>
+            <a href="#" class="list-group-item">
+              HTML5+CSS3网页编程
+            </a>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

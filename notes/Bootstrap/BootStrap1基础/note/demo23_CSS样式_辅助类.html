@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+    <!--1. 文本颜色样式-->
+    <div class="container">
+        <h1>1.CSS辅助类-文件</h1>
+        <h2>文本</h2>
+        <p class="text-muted">该段落使用了样式 "text-muted"。</p>
+        <a class="text-muted" href="#">链接使用了样式 "text-muted"。</a> 
+        <p class="text-primary">该段落使用了样式 "text-primary"。</p>
+        <a class="text-primary" href="# ">链接使用了样式 "text-primary"。</a> 
+        <p class="text-success">该段落使用了样式 "text-success"。</p>
+        <a class="text-success" href="#">链接使用了样式 "text-success"。</a> 
+        <p class="text-warning">该段落使用了样式 "text-warning"。</p>
+        <a class="text-warning" href="#">链接使用了样式 "text-warning"。</a> 
+        <p class="text-info">该段落使用了样式 "text-info"。</p>
+        <a class="text-info" href="#">链接使用了样式 "text-info"。</a> 
+        <p class="text-danger">该段落使用了样式 "text-danger"。</p>
+        <a class="text-danger" href="#">链接使用了样式 "text-danger"。</a> 
+
+    </div>
+    <!-- 2. 背景颜色样式 -->
+    <div class="container">
+        <h1>2.CSS辅助类-背景</h1>
+        <h2>背景</h2>
+        <p class="bg-primary">该段落使用了类 "bg-primary"。</p>
+        <a class="bg-primary" href="#">该链接使用了类 "bg-primary"。</a>
+        <p class="bg-success">该段落使用了类 "bg-success"。</p>
+        <a class="bg-success" href="#">该链接使用了类 "bg-success"。</a>
+        <p class="bg-info">该段落使用了类 "bg-info"。</p>
+        <a class="bg-info" href="#">该链接使用了类 "bg-info"。</a>
+        <p class="bg-warning">该段落使用了类 "bg-warning"。</p>
+        <a class="bg-warning" href="#">该链接使用了类 "bg-warning"。</a>
+        <p class="bg-danger">该段落使用了类 "bg-danger"。</p>
+        <a class="bg-danger" href="#">该链接使用了类 "bg-danger"。</a>
+    </div>
+
+    <!--3.其他
+    pull-left样式:左浮动
+    pull-right样式:右浮动
+    center-block样式：设置居中，单纯看上去是没有没居中的，因为块宽度默认100%，只不过块内文字没有居中，需要单独设置
+    style="text-align:center":设置文本居中
+    clearfix样式：清除浮动，即清除之前块设置的浮动
+    sr-only样式：除屏幕阅读器，其他设备上隐藏元素
+    sr-only-focusable：与sr-only配合使用，在元素获取焦点时显示(如键盘操作的用户)
+    show样式：强制元素显示
+    hidden样式强制元素隐藏
+    text-hide样式：将页面元素包含文本，替换为背景图(即div设置背景图时才显示)
+    close样式:显示关闭按钮(呈现灰色)，&times;为转译字符，转译为"X"图片,通常配合close样式使用
+    caret样式:显示下拉功能，通常span标签+class="caret"使用，生成倒三角图片,可用JS配合下拉列表使用
+    -->
+    <div class="container">
+        <h1>3.CSS辅助类-其他</h1>
+        <h2>pull-left,pull-right</h2>
+        <div class="pull-left">pull-left</div>
+        <div class="pull-right">pull-right</div>
+        <h2>Center-Block</h2>
+        <div class="center-block" style="width:200px">
+                <div>DIV居中</div>
+                <div style="text-align:center">DIV居中</div>
+        </div>
+        <div class="container">
+            <span class="center-block" style="text-align:center">该 div 显示在中间</span>
+            <div class="center-block" style="width:116px;">该 div 显示在中间</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>clearfix(清除浮动，即清除之前块设置的浮动)</h2>
+        <div class="clearfix" style="background: #D8D8D8;border: 1px solid #000;padding: 10px;">
+            <div class="pull-left" style="background:#58D3F7;">
+                向左快速浮动
+            </div>
+            <div class="pull-right" style="background: #DA81F5;">
+                向右快速浮动
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container">
+            <h2>.sr-only</h2>
+            <p>.sr-only 类除了屏幕阅读器外，其他设备上都隐藏元素:</p>
+            <a class="sr-only" href="#">跳转到主要内容</a>
+            <p>与 .sr-only 类结合使用，在元素获取焦点时显示(如：键盘操作的用户):</p>
+            <a class="sr-only sr-only-focusable" href="#">跳转到主要内容</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container">
+            <h2>.text-only</h2>
+            <p>.text-only 类将页面元素所包含的文本内容替换为背景图:</p>
+            <div class="text-hide">在 div 元素中插入一些文本。</div>
+        </div>
+    </div>
+    
+    <div class="container" style="padding:40px;">
+        <h2>关闭按钮</h2>
+         <button type="button" class="close" >&times;</button>
+    </div>
+    
+    <div class="container">
+        <h2>插入符Caret</h2>
+        请选择<span class="caret"></span>
+    </div>
+
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
