@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/angular-csp.css"/>
+  <title>全选</title>
+</head>
+<!--利用ng-init指令声明模型-->
+<body ng-controller="myController">
+
+<!--单向数据绑定和双向数据绑定结合实现表格项目的全选-->
+<table>
+  <tr>
+    <td>全选 <input type="checkbox" ng-model="allChecked"/></td>
+    <td>姓名</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" ng-checked="allChecked" ng-model="cbChecked_0"/></td>
+    <td>tom</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" ng-checked="allChecked" ng-model="cbChecked_1"/></td>
+    <td>jerry</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" ng-checked="allChecked" ng-model="cbChecked_2"/></td>
+    <td>mike</td>
+  </tr>
+</table>
+
+
+<script src="js/angular.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

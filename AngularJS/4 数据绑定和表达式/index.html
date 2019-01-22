@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/angular-csp.css"/>
+  <title>Hello,AngularJS</title>
+</head>
+<!--利用ng-init指令声明模型-->
+<body ng-controller="myController" ng-init="a='aaa';b=123;c=true;d={name:'tom',age:10};e=[1,2,3,'abc']">
+
+<!--使用常量-->
+<h1>{{'Hello,AngularJS'}}</h1>
+<h1>{{123}}</h1>
+<h1>{{true}}</h1>
+<h1>{{[1,2,3,'aaa']}}</h1>
+
+<!--使用变量-->
+<h1>{{a}}</h1>
+<h1>{{b}}</h1>
+<h1>{{c}}</h1>
+<h1>{{d}}</h1>
+<h1>{{e}}</h1>
+
+<!--使用函数形式-->
+<h1>{{fn(a,b)}}</h1>
+
+<!--使用表达式形式-->
+<h1>{{a+b}}</h1>
+<h1>{{c?'yes':'node'}}</h1>
+<button ng-click="add()">增加</button>
+<div>{{num}}</div>
+
+<!--使用指令的形式实现数据绑定-->
+<h1 ng-bind="a"></h1>
+
+<!--测试控制器的嵌套-->
+<div ng-controller="myController2">
+  <button ng-click="add()">增加-myController2</button>
+  <div>{{num}}</div>
+</div>
+
+<script src="js/angular.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

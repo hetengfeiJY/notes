@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="filter">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/angular-csp.css"/>
+  <title>过滤器的使用</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-controller="filterController">
+<div class="container" style="padding:100px;">
+  <!--过滤器filter的用法-->
+  <h2>过滤器filter的用法</h2>
+  <lu class="nav nav-tabs">
+    <li>输入查询内容<input type="text" ng-model="search" placeholder="任意字段" /></li>
+    <li>输入查询内容<input type="text" ng-model="search.name" placeholder="搜索名字" /></li>
+    <li>输入查询内容<input type="text" ng-model="search.phone" placeholder="搜索电话" /></li>
+    <li>是否严格查询<input type="checkbox" ng-model="strict" placeholder="严格查询" /></li>
+  </lu>
+  <table class="table table-bordered table-hover">
+      <tr>
+      <!--过滤器orderBy的使用-->
+        <th><a href="javascript:void(0)" ng-click="reverse=!reverse;order('name',reverse)">名称</a></th>
+        <th><a href="javascript:void(0)" ng-click="reverse=!reverse;order('phone',reverse)">电话</a></th>
+      </tr>
+    <!--使用ng-repeat指令渲染所有的朋友数据(相当于for循环)
+    filter:筛选过滤
+    -->
+      <tr ng-repeat="friend in friends|filter:search:strict">
+        <td>{{friend.name|capitalize}}</td>
+        <td>{{friend.phone}}</td>
+      </tr>
+  </table>
+  <!--使用自定义过滤器-->
+  <h2>使用自定义过滤器,把hello第一个字母变大写</h2>
+  <h4>{{'hello world'|capitalize}}</h4>
+</div>
+<script src="js/angular.js"></script>
+<script src="js/filter.js"></script>
+</body>
+</html>

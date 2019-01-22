@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="cart">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/angular-csp.css"/>
+  <title>过滤器</title>
+</head>
+<body ng-controller="filterController" >
+<!--过滤器的用法-->
+<!--大写过滤器：{{ uppercase_expression | uppercase}}-->
+<h5>{{'LoveyourselfJiuhao' | uppercase}}</h5>
+<!--小写过滤器：{{ lowercase_expression | lowercase}}-->
+<h5>{{'LoveyourselfJiuhao' | lowercase}}</h5>
+<!-- 货币过滤器currency:{{ currency_expression | currency : symbol}} -->
+{{12345|currency:'￥':4}} 
+<!--日期过滤器date-->
+<h5>{{birthday}}</h5>
+<h5>{{birthday|date}}</h5>
+<h5>{{birthday|date:'yyyy-MM-dd'}}</h5>
+<h5>{{birthday|date:'yyyy-MM-dd HH:mm:ss'}}</h5>
+<h5>{{birthday|date:'shortDate'}}</h5>
+
+<!--数字过滤器number：{{ number_expression | number : fractionSize}}
+number_expression：任意数字
+fractionSize：小数点位数
+-->
+<h5>{{1234567|number}}</h5>
+<h5>{{1234567|number:2}}</h5>
+<h5>{{1234567.1234|number:2}}</h5>
+
+<!--limitTo:用来限制字符串长度-->
+<!-- 长度过滤器limitTo：{{ limitTo_expression | limitTo : limit}} 
+limitTo_expression：任意内容
+limit：限制的长度
+-->
+<p>{{'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'|limitTo:20}}...</p>
+<div>{{data|limitTo:3}}</div>
+<!--转换一个JavaScript对象到JSON字符串-->   
+<pre>{{ {'name':'乐乐','age':'18'} | json }}</pre>
+
+
+<script src="js/angular.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

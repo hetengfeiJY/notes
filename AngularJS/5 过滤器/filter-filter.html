@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="cart">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/angular-csp.css"/>
+  <title>过滤器filter的使用</title>
+</head>
+<body ng-controller="filterController">
+
+<!--过滤器filter的用法-->
+<input type="text" ng-model="searchText"/>
+<input type="checkbox" ng-model="strict"/>
+<!--filter-->
+<table>
+  <tr>
+    <th>名称</th>
+    <th>电话</th>
+  </tr>
+  <!--使用ng-repeat指令渲染所有的朋友数据-->
+  <tr ng-repeat="friend in friends|filter:searchText:strict">
+    <td>{{friend.name}}</td>
+    <td>{{friend.phone}}</td>
+  </tr>
+</table>
+
+
+任意字段：<input type="text" ng-model="search.$"/>
+搜索名字：<input type="text" ng-model="search.name"/>
+搜索电话：<input type="text" ng-model="search.phone"/>
+<!--filter-->
+<table>
+  <tr>
+    <th>名称</th>
+    <th>电话</th>
+  </tr>
+  <!--使用ng-repeat指令渲染所有的朋友数据-->
+  <tr ng-repeat="friend in friends|filter:search">
+    <td>{{friend.name}}</td>
+    <td>{{friend.phone}}</td>
+  </tr>
+</table>
+
+<script src="js/angular.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

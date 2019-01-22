@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/angular-csp.css"/>
+  <title>ng-hide的使用</title>
+</head>
+<!--利用ng-init指令声明模型-->
+<body ng-controller="myController">
+
+<input type="checkbox" ng-model="isHide" id="isHide"/>
+<label for="isHide">是否隐藏Div</label>
+
+<!--ng-hide的使用-->
+<h2>ng-hide的使用</h2>
+<div ng-hide="isHide">是否隐藏该Div元素</div>
+
+<input type="checkbox" ng-model="isShow" id="isShow"/>
+<label for="isShow">是否显示Div</label>
+
+<h2>ng-show的使用</h2>
+<div ng-show="isShow">是否显示该Div元素</div>
+
+<h2>ng-if的使用<input type="checkbox" ng-model="isShowByNgIf" /></h2>
+<div ng-if="isShowByNgIf">ng-if决定元素显示与否，这里的显示是添加到dom树中，如果不显示则是从dom树中删除相关元素</div>
+
+<h2>ng-readonly</h2>
+<input type="text" ng-readonly="isReadonly"/>
+<input type="checkbox" ng-model="isReadonly"/>
+
+
+<h2>ng-selected的使用</h2>
+<select>
+  <option value="010">北京</option>
+  <option value="021" ng-selected="isSelected">上海</option>
+</select>
+<script src="js/angular.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

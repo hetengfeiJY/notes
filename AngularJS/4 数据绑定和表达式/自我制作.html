@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/angular-csp.css"/>
+  <title>表达式和数据绑定</title>
+  <style>
+    .red{
+        color:red;
+    }
+    .yellow{
+        color:yellow;
+        border:1px solid black;
+    }
+    .blue{
+        color:blue;
+        border:1px solid tomato;
+    }
+    .green{
+        color:green;
+        border:1px solid violet;
+    }
+    </style>
+</head>
+<!--可利用ng-init指令声明模型，不建议使用-->
+<body ng-controller="myController">
+<ul style="list-style: none">
+    <li>
+        <!--双向数据绑定，可以影响myClass的值，当其发生改变时，样式也跟着变化-->
+        <h3>一、双向数据绑定，可以影响myClass的值，当其发生改变时，样式也跟着变化</h3>
+        <p>请选一种喜欢的颜色：red(红)、yellow(黄)、blue(蓝)、green(绿)</p>
+        <label for="">输入喜欢的颜色：</label> 
+        <input type="text" ng-model="myClass" placeholder="请输入blue或red或border"/>
+        <div ng-class="myClass" style="width: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate iure dignissimos molestias laudantium voluptate ratione culpa consequuntur in accusantium dolorem fugit, consequatur exercitationem numquam laboriosam ad recusandae rerum dolor ipsa.</div>
+    </li>
+    <li>
+        <!-- 显示、隐藏、添加或删除 -->
+        <h3>二、ng-show的使用<input type="checkbox"  ng-model="isShow" id="isShow"/></h3>
+        <label for="isShow" ng-show="isShow">ng-isShow决定元素是否显示Div</label>
+        <h3>三、ng-hide的使用<input type="checkbox"  ng-model="isHide" id="isHide"/></h3>
+        <label for="isHide" ng-hide="isHide">ng-isHide决定元素是否隐藏Div</label>
+        <h3>四、ng-if的使用<input type="checkbox" ng-model="isShowByNgIf" /></h3>
+        <label ng-if="isShowByNgIf">ng-if决定元素显示与否，这里的显示是添加到dom树中，如果不显示则是从dom树中删除相关元素</label>
+    </li>
+    <li>
+        <!--单向数据绑定和双向数据绑定结合实现项目的全选-->
+        <h3>五、单向数据绑定和双向数据绑定结合实现项目的全选</h3>
+        <input type="checkbox" ng-model="allChecked"/>
+        <label for="全选">全选</label>
+        <input type="checkbox" ng-checked="allChecked" ng-model="cbChecked_0"/>
+        <label for="小明">小明</label>
+        <input type="checkbox" id="xiaohong" ng-checked="allChecked" ng-model="cbChecked_1"/>
+        <label for="小红">小红</label>
+        <input type="checkbox" ng-checked="allChecked" ng-model="cbChecked_2"/>
+        <label for="小飞">小飞</label>
+    </li>
+    <li>
+        <!--购物车商品小计列表-->
+        <h3>六、购物车商品小计列表</h3>
+        <table ng-controller="myController2">
+            <tr>
+            <td>单价</td>
+            <td>数量</td>
+            <td>小计</td>
+            </tr>
+            <tr>
+            <td>
+                <input type="text" ng-model="price1"/>
+            </td>
+            <td>
+                <input type="text" ng-model="count1"/>
+            </td>
+            <td align="right">{{price1*count1}}</td>
+            </tr>
+            <tr>
+            <td>
+                <input type="text" ng-model="price2"/>
+            </td>
+            <td>
+                <input type="text" ng-model="count2"/>
+            </td>
+            <td align="right">
+                {{price2*count2}}
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <input type="text" ng-model="price3"/>
+            </td>
+            <td>
+                <input type="text" ng-model="count3"/>
+            </td>
+            <td align="right">{{price3*count3}}</td>
+            </tr>
+            <tr>
+            <td colspan="3" align="right">
+                总计：{{total}}
+            </td>
+            </tr>
+        </table>
+    </li>
+</ul>
+<script src="js/angular.js"></script>
+<script src="js/index.js"></script>
+<script>$(".xiaohong").checked=true</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- ng-app="myApp应用整个HTML作用域，也可单独设置在body、div等标签中(AngularJS应用在作用域)-->
+<html ng-app="myApp">
+  <head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/angular-csp.css"/>
+    <title>Hello,AngularJS</title>
+  </head>
+  <!-- myController控制器应用body作用域 -->
+  <body ng-controller="myController">
+    <h1>{{'Hello,AngularJS'}}</h1>
+    <!-- 点击按钮执行add()函数,每次num值加一 -->
+    <button ng-click="add()">增加</button>
+    <div>{{num}}</div>
+
+    <!--测试控制器的嵌套-->
+    <div ng-controller="myController2">
+      <!-- 点击按钮执行父控制器add()函数 -->
+      <button ng-click="add()">增加-myController2</button>
+      <div>{{num}}</div>
+    </div>
+
+    <script src="js/angular.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

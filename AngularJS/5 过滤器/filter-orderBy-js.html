@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="filter">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/angular-csp.css"/>
+  <title>过滤器orderBy的使用</title>
+</head>
+<body ng-controller="filterController">
+
+<!--使用自定义过滤器-->
+{{'hello world'|capitalize}}
+
+<!--过滤器orderBy的使用-->
+<table>
+  <tr>
+    <th><a href="javascript:void(0)" ng-click="reverse=!reverse;order('name',reverse)">名称</a></th>
+    <th><a href="javascript:void(0)" ng-click="reverse=!reverse;order('phone',reverse)">电话</a></th>
+  </tr>
+  <!--使用ng-repeat指令渲染所有的朋友数据-->
+  <tr ng-repeat="friend in friends">
+    <td>{{friend.name|capitalize}}</td>
+    <td>{{friend.phone}}</td>
+  </tr>
+</table>
+
+<script src="js/angular.js"></script>
+<script src="js/filter.js"></script>
+</body>
+</html>
